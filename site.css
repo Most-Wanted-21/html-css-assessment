@@ -1,105 +1,153 @@
 
 
 fieldset {
-  /* Get rid of the border on the fieldset. */
-  border: 0;
+	/* Get rid of the border on the fieldset. */
+	border: 0;
 }
 
 form {
-  /* Center the form on the page. */
-  margin: 0 auto;
-  width: 600px;
-
-  /* Curved border around the form. */
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-
-  /* Make all the fonts in the form the same. */
-  font-family: Arial, Helvetica, sans-serif;
+	/* Center the form on the page. */
+	margin: 0 auto;
+	width: 600px;
+	/* Curved border around the form. */
+	padding: 1em;
+	border: 1px solid #CCC;
+	border-radius: 1em;
+	/* Make all the fonts in the form the same. */
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Every div after the first div in the form. */
-form div + div {
-  margin-top: 1em;
+
+form div+div {
+	margin-top: 2em;
 }
 
 label {
-  /* Uniform size & alignment for labels. */
-  display: inline-block;
-  width: 110px;
-  text-align: right;
+	/* Uniform size & alignment for labels. */
+	display: inline-block;
+	width: 110px;
+	text-align: right;
 }
 
 legend {
-  /* Add a bottom border to the legend. */
-  border-bottom: 1px solid black;
+	/* Add a bottom border to the legend. */
+	border-bottom: px solid black;
 }
 
 input,
 textarea {
-  /* You must explicitly override the fonts in textareas and inputs. */
-  font-family: Arial, Helvetica, sans-serif;
-
-  /* Uniform text field  and textarea sizes. */
-  width: 425px;
-  box-sizing: border-box;
-
-  /* Match form field borders */
-  border: 1px solid #999;
+	/* You must explicitly override the fonts in textareas and inputs. */
+	font-family: Arial, Helvetica, sans-serif;
+	/* Uniform text field  and textarea sizes. */
+	width: 425px;
+	box-sizing: border-box;
+	/* Match form field borders */
+	border: 1px solid #999;
 }
 
 input:focus,
 textarea:focus {
-  /* Additional highlight for focused elements */
-  border-color: #000;
+	/* Additional highlight for focused elements */
+	border-color: #000;
 }
 
 textarea {
-  /* Align multiline text fileds with their labels */
-  vertical-align: top;
-
-  /* Provide space to type some text */
-  height: 5em;
+	/* Align multiline text fileds with their labels */
+	vertical-align: top;
+	/* Provide space to type some text */
+	height: 5em;
 }
 
 select {
-  /* You must explicitly override the font in a select. */
-  font-family: Arial, Helvetica, sans-serif;
-
-  /* Make the select as wide as the other form elements. */
-  width: 425px;
+	/* You must explicitly override the font in a select. */
+	font-family: Arial, Helvetica, sans-serif;
+	/* Make the select as wide as the other form elements. */
+	width: 425px;
 }
 
 button {
-  /* Space the button to the right. */
-  margin-left: .5em;
+  width: 100%;
+  height: 100%;
 }
-@media screen and (max-width: 600px) {
 
-  /* remove the width form the form so that
-   it is just as wide as the screen. */
-  form {
-    width: auto;
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+  width: 344px;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.desert {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+  width: 344px;
+  height: 194px;
+}
+.avatar {
+  grid-column: 3;
+  grid-row: 3;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  perspective: 1px;
   }
 
-  /* Turn labels into blocks so they can stretch
+.titlecard {
+  grid-column: 5 / 11;
+  grid-row: 3;
+  color: #000;
+  font-size: 22px;
+}
+
+.secondtext {
+  grid-column: 5 / 11;
+  grid-row: 4;
+  color: #232F34;
+}
+
+.greyhoundtext {
+  grid-column: 5 / 11;
+  grid-row: 5;
+  padding-top: 16px;
+  color: #232F34;
+  font-size: 11px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+	/* remove the width form the form so that
+   it is just as wide as the screen. */
+	form {
+		width: auto;
+	}
+	/* Turn labels into blocks so they can stretch
   across the entire screen. Also, get rid of
    the margin so that the text is left aligned.
    Finally, set the width to auto so that it
    isn't stuck at 90px. */
-   label {
-     display: block;
-     margin: 0;
-     text-align: left;
-     width: auto;
-   }
-
-  /* Let the inputs, textareas, and selects span
+	label {
+		display: block;
+		margin: 0;
+		text-align: left;
+		width: auto;
+	}
+	/* Let the inputs, textareas, and selects span
   the entire screen, too. */
-  input,
-  select,
+	input,
+	select,
   textarea {
-width: 100%
+		width: 100%
   }
+
 }
