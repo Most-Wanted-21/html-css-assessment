@@ -1,5 +1,4 @@
 
-
 fieldset {
 	/* Get rid of the border on the fieldset. */
 	border: 0;
@@ -11,16 +10,19 @@ form {
 	width: 600px;
 	/* Curved border around the form. */
 	padding: 1em;
-	border: 1px solid #CCC;
+	border: 2px solid #CCC;
 	border-radius: 1em;
 	/* Make all the fonts in the form the same. */
 	font-family: Arial, Helvetica, sans-serif;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto auto;
+	justify-content: center;
 }
 
-/* Every div after the first div in the form. */
-
 form div+div {
-	margin-top: 2em;
+	/* Every div after the first div in the form. */
+	margin-top: 1.5em;
 }
 
 label {
@@ -36,7 +38,8 @@ legend {
 }
 
 input,
-textarea {
+textarea,
+button {
 	/* You must explicitly override the fonts in textareas and inputs. */
 	font-family: Arial, Helvetica, sans-serif;
 	/* Uniform text field  and textarea sizes. */
@@ -47,7 +50,8 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+button:focus {
 	/* Additional highlight for focused elements */
 	border-color: #000;
 }
@@ -67,87 +71,69 @@ select {
 }
 
 button {
-  width: 100%;
-  height: 100%;
+	padding: 3px 3px;
+	margin: 1px 1px;
+	background: rgb(215, 219, 223);
+	transition: all 500ms ease-in-out;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: 700;
+	color: rgb(16, 16, 199);
+	grid-column: 1 / span 5;
+}
+
+button:hover {
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 3);
 }
 
 
 .card {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 5px;
-  grid-auto-rows: minmax(100px, auto);
-  width: 344px;
-  height: 100%;
+	height: 0 auto;
+	width: 344px;
+	border: 6px solid rgb(215, 219, 223);
+	margin: 2vw auto;
+
 }
 
-img {
-  width: 100%;
-  height: 100%;
+.card_content {
+	border-radius: 1vw;
+	margin: auto;
 }
 
 .desert {
-  grid-column: 3 / 5;
-  grid-row: 1 / 3;
-  width: 344px;
-  height: 194px;
+	height: 194px;
+	width: 345px;
+	overflow: hidden;
+	border-radius: 0.5vw;
 }
+
+.card_details {
+	height: 57px;
+}
+
 .avatar {
-  grid-column: 3;
-  grid-row: 3;
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
-  overflow: hidden;
-  perspective: 1px;
-  }
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	width: 40px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
 
-.titlecard {
-  grid-column: 5 / 11;
-  grid-row: 3;
+#titlecard {
   color: #000;
-  font-size: 22px;
+	font-size: 22px;
+	margin: 0;
 }
 
-.secondtext {
-  grid-column: 5 / 11;
-  grid-row: 4;
+#secondtext {
+	color: #232F34;
+	margin: 0;
+}
+
+#greyhoundtext {
+  padding: 16px;
   color: #232F34;
-}
-
-.greyhoundtext {
-  grid-column: 5 / 11;
-  grid-row: 5;
-  padding-top: 16px;
-  color: #232F34;
-  font-size: 11px;
-}
-
-
-
-@media screen and (max-width: 600px) {
-	/* remove the width form the form so that
-   it is just as wide as the screen. */
-	form {
-		width: auto;
-	}
-	/* Turn labels into blocks so they can stretch
-  across the entire screen. Also, get rid of
-   the margin so that the text is left aligned.
-   Finally, set the width to auto so that it
-   isn't stuck at 90px. */
-	label {
-		display: block;
-		margin: 0;
-		text-align: left;
-		width: auto;
-	}
-	/* Let the inputs, textareas, and selects span
-  the entire screen, too. */
-	input,
-	select,
-  textarea {
-		width: 100%
-  }
-
+	font-size: 11px;
+	margin: 1vw;
 }
