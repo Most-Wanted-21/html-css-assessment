@@ -1,28 +1,25 @@
 
-fieldset {
-	/* Get rid of the border on the fieldset. */
-	border: 0;
-}
 
 form {
 	/* Center the form on the page. */
 	margin: 0 auto;
 	width: 600px;
 	/* Curved border around the form. */
-	padding: 1em;
+	padding: 0.5em;
 	border: 2px solid #CCC;
 	border-radius: 1em;
 	/* Make all the fonts in the form the same. */
 	font-family: Arial, Helvetica, sans-serif;
-	display: grid;
-	grid-template-columns: auto auto auto;
-	grid-template-rows: auto auto auto;
-	justify-content: center;
 }
 
 form div+div {
 	/* Every div after the first div in the form. */
-	margin-top: 1.5em;
+	margin-top: 1em;
+}
+
+fieldset {
+	/* Get rid of the border on the fieldset. */
+	border: 0;
 }
 
 label {
@@ -38,8 +35,7 @@ legend {
 }
 
 input,
-textarea,
-button {
+textarea {
 	/* You must explicitly override the fonts in textareas and inputs. */
 	font-family: Arial, Helvetica, sans-serif;
 	/* Uniform text field  and textarea sizes. */
@@ -50,8 +46,7 @@ button {
 }
 
 input:focus,
-textarea:focus,
-button:focus {
+textarea:focus {
 	/* Additional highlight for focused elements */
 	border-color: #000;
 }
@@ -71,27 +66,31 @@ select {
 }
 
 button {
+	width: 425px;
 	padding: 3px 3px;
-	margin: 1px 1px;
+	margin-left: 115px;
 	background: rgb(215, 219, 223);
-	transition: all 500ms ease-in-out;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-weight: 700;
 	color: rgb(16, 16, 199);
-	grid-column: 1 / span 5;
+	transition: all 500ms ease-in-out;
 }
 
 button:hover {
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 3);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, .3);
 }
-
 
 .card {
 	height: 0 auto;
 	width: 344px;
 	border: 6px solid rgb(215, 219, 223);
-	margin: 2vw auto;
+	margin: 3vw auto;
+	margin-left: 150px;
+}
 
+.card:hover {
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, .3);
+	transition: all 500ms ease-in-out;
 }
 
 .card_content {
@@ -101,7 +100,7 @@ button:hover {
 
 .desert {
 	height: 194px;
-	width: 345px;
+	width: 344px;
 	overflow: hidden;
 	border-radius: 0.5vw;
 }
@@ -132,8 +131,51 @@ button:hover {
 }
 
 #greyhoundtext {
-  padding: 16px;
+	padding: 16px;
   color: #232F34;
 	font-size: 11px;
 	margin: 1vw;
+}
+
+form {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	/* Can't seem to figure out how columns would adjust this
+	form per instructions */
+}
+
+@media screen and (max-width: 599px) {
+	form {
+		/* min-width: 599px */
+		border: none;
+	}
+
+	fieldset {
+		margin: 0.1em;
+		padding: 0.1em;
+	}
+
+	button {
+		margin: 0.1em;
+		padding: 0.1em;
+		/* need help on applying grid-column adjustment */
+	}
+
+	.card {
+		margin: 2em;
+	}
+
+	label {
+		text-align: left;
+	}
+
+}
+
+@media screen and (min-width: 600px) {
+	form {
+		grid-column: span 2 / 7;
+		/* need help on this grid-column adjustment */
+
+	}
+
 }
