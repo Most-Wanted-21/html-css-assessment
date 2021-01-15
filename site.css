@@ -166,7 +166,10 @@ form {
 	}
 
 	.card {
-		margin: 2em;
+		margin: 1 em;
+		margin-left: auto;
+		margin-right: auto;
+		/* Got this to be centered when <599px */
 	}
 
 	label {
@@ -180,11 +183,12 @@ form {
 		width: 100%
 		/* This is what I needed along with a display block
 		on form to have the elements stretch when <599px */
-
+	}
 }
 
 @media screen and (min-width: 600px) {
 	form {
+		width: 600px;
 		grid-column: span 2 / 7;
 		/* need help on this grid-column adjustment */
 
