@@ -148,8 +148,10 @@ form {
 
 @media screen and (max-width: 599px) {
 	form {
-		/* min-width: 599px */
+		display: block;
+		width: auto;
 		border: none;
+		margin: 0;
 	}
 
 	fieldset {
@@ -170,6 +172,14 @@ form {
 	label {
 		text-align: left;
 	}
+
+	input,
+  select,
+	textarea,
+	button {
+		width: 100%
+		/* This is what I needed along with a display block
+		on form to have the elements stretch when <599px */
 
 }
 
